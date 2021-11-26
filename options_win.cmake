@@ -44,6 +44,10 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
         INTERFACE
             /bigobj # scheme.cpp has too many sections.
         )
+        target_link_options(common_options
+        INTERFACE
+            $<IF:$<CONFIG:Debug>,,/LTCG>
+        )
     else()
         # target_compile_options(common_options
         # INTERFACE
