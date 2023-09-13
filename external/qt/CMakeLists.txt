@@ -130,6 +130,7 @@ else()
         lib/${qt_lib_prefix}qtlibpng
         lib/${qt_lib_prefix}qtpcre2
     )
+
 endif()
 
 set(qt_libs_list "")
@@ -277,6 +278,10 @@ INTERFACE
     $<TARGET_FILE:desktop-app::external_jpeg>
     $<LINK_ONLY:desktop-app::external_zlib>
     $<TARGET_FILE:desktop-app::external_zlib>
+    $<LINK_ONLY:desktop-app::external_webp>
+    $<TARGET_FILE:desktop-app::external_libwebp>
+    $<TARGET_FILE:desktop-app::external_libwebpdemux>
+    $<TARGET_FILE:desktop-app::external_libwebpmux>
 )
 
 if (LINUX)
